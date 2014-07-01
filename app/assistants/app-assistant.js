@@ -84,7 +84,7 @@ AppAssistant.prototype.addComplete = function(success, url, title, response) {
 
 	var cardStageController = Mojo.Controller.getAppController().getStageController(Relego.MainStageName);
 
-	if ( (success) && (response == "200 OK") ) {
+	if ( (success) && (response.substr(0,6) == "200 OK") ) {
 		Mojo.Controller.getAppController().showBanner($L("URL Saved to Relego"), {source: 'notification'});
 	} else {
 		//--> Oooo, an Error!
